@@ -1,6 +1,6 @@
-# Infinova
+# InfiNoVA
 
-Infinova augments robot demonstration data with novel-view renders synthesized
+InfiNoVA augments robot demonstration data with novel-view renders synthesized
 from sparse-view Gaussian Splatting, then packages the result into a
 [LeRobot](https://github.com/huggingface/lerobot)-format dataset for VLA
 policy training. It uses [InstantSplatPP](https://github.com/phai-lab/InstantSplatPP)
