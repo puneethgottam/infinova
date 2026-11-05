@@ -236,9 +236,6 @@ python train_smolvla_folder_views.py \
 
 ## Other scripts
 
-- **`create_proper_dataset.py`** — dataset preparation helper for turning raw
-  episode recordings into the per-camera frame-folder layout expected by
-  `run_instantsplat_episode.sh`.
 - **`sample_camera_positions_with_yz_jitter.py`** — standalone camera-position
   sampler used internally by `render_novel_views.sh`; can also be run directly
   for custom sampling (see `--help`).
