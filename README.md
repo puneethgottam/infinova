@@ -12,6 +12,10 @@ camera views for data augmentation.
 
 ## Pipeline
 
+0. **`export_hf_dataset_frames.py`** *(optional)* — if you're starting from an
+   existing Hugging Face LeRobot dataset rather than raw robot recordings,
+   downloads it and exports every episode's camera frames as the per-episode,
+   per-camera PNG folder layout the rest of the pipeline expects.
 1. **`run_instantsplat_episode.sh`** — splats every frame in an episode, saving a
    Gaussian PLY and the `cameras.json` estimated during splatting for each frame.
 2. **`select_best_cameras_json.py`** — the 5 cameras are physically static during
@@ -73,6 +77,31 @@ the full installation documentation.
 Each script is self-contained and documented with `--help`. All of them accept
 either command-line arguments or a `DEFAULT_*` block you can fill in at the top
 of the script if you'd rather not repeat paths on every run.
+
+### 0) (Optional) Export frames from an existing HF dataset
+
+Requires the LeRobot environment (see Setup, step 3). Skip this step if you
+already have raw robot recordings laid out as one folder per camera per
+episode.
+
+```bash
+python export_hf_dataset_frames.py lerobot/pusht_image \
+    --output-dir exported_frames \
+    --episodes 0,2,5-9
+```
+
+| Argument | Meaning |
+| --- | --- |
+| `repo_id` (positional) | Hugging Face dataset repo id to download, e.g. `lerobot/pusht_image`. |
+| `--output-dir` | Directory the per-episode folders will be written under, as `OUTPUT_DIR/<repo_id>/episode_######/<camera>/frame_######.png` (default: `exported_frames`). |
+| `--dataset-root` | Optional local LeRobot dataset cache/download directory, if you want to reuse an existing download instead of re-fetching. |
+| `--episodes` | Optional episode list/ranges to export, e.g. `0,2,5-9`. Defaults to all episodes. |
+| `--revision` | Optional Hugging Face revision, branch, tag, or commit SHA to download. |
+| `--overwrite` | Replace an existing export directory at `OUTPUT_DIR/<repo_id>` instead of erroring if it already exists. |
+
+Camera subfolders are named from each image/video feature's key (e.g.
+`observation.images.cam0` becomes `cam0`). The resulting folder tree can be
+fed directly into step 1 below.
 
 ### 1) Splat an episode
 
