@@ -1,5 +1,7 @@
 # Infinova
 
+[![arXiv](https://img.shields.io/badge/arXiv-2609.27734-b31b1b.svg)](https://arxiv.org/abs/2609.27734)
+
 Infinova augments robot demonstration data with novel-view renders synthesized
 from sparse-view Gaussian Splatting, then packages the result into a
 [LeRobot](https://github.com/huggingface/lerobot)-format dataset for VLA
@@ -247,6 +249,25 @@ python train_smolvla_folder_views.py \
   both `publish_folder_view_dataset.py` and `train_smolvla_folder_views.py`;
   pairs a base LeRobot dataset's actions/states with camera images loaded
   from a local folder tree.
+
+## Paper
+
+**InfiNoVA: Infinite Novel View Augmentation for Viewpoint Invariant Robot Policies**
+Sai Puneeth Reddy Gottam, Elmar Rueckert, Vedant Dave — [arXiv:2609.27734](https://arxiv.org/abs/2609.27734)
+
+If you use this code in your research, please cite:
+
+```bibtex
+@misc{gottam2026infinovainfinitenovelview,
+      title={InfiNoVA: Infinite Novel View Augmentation for Viewpoint Invariant Robot Policies},
+      author={Sai Puneeth Reddy Gottam and Elmar Rueckert and Vedant Dave},
+      year={2026},
+      eprint={2609.27734},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2609.27734},
+}
+```
 
 ## Acknowledgement
 
