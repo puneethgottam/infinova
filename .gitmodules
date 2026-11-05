@@ -1,0 +1,6 @@
+[submodule "InstantSplatPP"]
+	path = InstantSplatPP
+	url = https://github.com/phai-lab/InstantSplatPP.git
+[submodule "lerobot"]
+	path = lerobot
+	url = https://github.com/huggingface/lerobot.git
