@@ -1,8 +1,8 @@
-# Infinova
+# InfiNoVA
 
 [![arXiv](https://img.shields.io/badge/arXiv-2609.27734-b31b1b.svg)](https://arxiv.org/abs/2609.27734)
 
-Infinova augments robot demonstration data with novel-view renders synthesized
+InfiNoVA augments robot demonstration data with novel-view renders synthesized
 from sparse-view Gaussian Splatting, then packages the result into a
 [LeRobot](https://github.com/huggingface/lerobot)-format dataset for VLA
 policy training. It uses [InstantSplatPP](https://github.com/phai-lab/InstantSplatPP)
@@ -30,7 +30,7 @@ camera views for data augmentation.
 
 ## Setup
 
-Infinova wraps two independent codebases with incompatible dependencies
+InfiNoVA wraps two independent codebases with incompatible dependencies
 (InstantSplatPP requires Python 3.10 + CUDA-compiled extensions; LeRobot
 requires Python >= 3.12), so set up **two separate environments**.
 
